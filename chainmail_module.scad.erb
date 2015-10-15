@@ -29,6 +29,7 @@ see also: http://paulbourke.net/geometry/chainmail3d/
 def ring(color, position, rotation, size, thickness, resolution = 32)
   out = ""
   out += "color(\"#{color}\")" + "\n"
+  out += "scale([0.9, 0.9, 0.9])" + "\n"
   out += "translate(#{position})" + "\n"
   out += "rotate(#{rotation})" + "\n"
   out += "rotate_extrude($fn=#{resolution})" + "\n"
@@ -36,51 +37,36 @@ def ring(color, position, rotation, size, thickness, resolution = 32)
   out += "circle(#{thickness / 2.0}, $fn=16);" + "\n\n"
   out
 end
-
-def makeTile(position, size, thickness)
-  spacing = size * 1.1
-  out = ""
-
-  # blue
-
-  out += ring("blue", position.map{|x| x * spacing}, "", 1, thickness)
-  offset = [spacing, spacing, spacing]
-  out += ring("blue", position.map.with_index{|x, i| x * spacing + offset[i] / 2.0}, "", 1, thickness)
-
-  # red
-
-  offset = [0, spacing / 2.0, 0]
-  out += ring("red", position.map.with_index{|x, i| x * spacing + offset[i]}, [0, 90, 0], 1, thickness)
-
-  offset = [spacing / 2.0, 0, spacing / 2.0]
-  out += ring("red", position.map.with_index{|x, i| x * spacing + offset[i]}, [0, 90, 0], 1, thickness)
-
-  # green
-
-  offset = [spacing / 2.0, 0, 0]
-  out += ring("green", position.map.with_index{|x, i| x * spacing + offset[i]}, [90, 0, 0], 1, thickness)
-
-  offset = [0, spacing / 2.0, spacing / 2.0]
-  out += ring("green", position.map.with_index{|x, i| x * spacing + offset[i]}, [90, 0, 0], 1, thickness)
-
-  out
-end
-
-def chainmail(size, ringSize, thickness)
-  width = size[0]
-  height = size[1]
-  depth = size[2]
-  out = ""
-
-  (0..width - 1).each do |x|
-    (0..height - 1).each do |y|
-      (0..depth - 1).each do |z|
-        out += makeTile([x, y, z], ringSize, thickness)
-      end
-    end
-  end
-  out
-end
 %>
 
-<%= chainmail([2, 2, 2], 1.0, 0.2) %>
+module chainMailTile() {
+  <%
+  position = [0, 0, 0]
+  thickness = 0.2
+  size = 1.0
+
+  spacing = size * 1.1
+  %>
+
+  // blue
+
+  <%= ring("blue", position.map{|x| x * spacing}, "", 1, thickness) %>
+  <% offset = [spacing, spacing, spacing] %>
+  <%= ring("blue", position.map.with_index{|x, i| x * spacing + offset[i] / 2.0}, "", 1, thickness) %>
+
+  // red
+
+  <% offset = [0, spacing / 2.0, 0] %>
+  <%= ring("red", position.map.with_index{|x, i| x * spacing + offset[i]}, [0, 90, 0], 1, thickness) %>
+
+  <% offset = [spacing / 2.0, 0, spacing / 2.0] %>
+  <%= ring("red", position.map.with_index{|x, i| x * spacing + offset[i]}, [0, 90, 0], 1, thickness) %>
+
+  // green
+
+  <% offset = [spacing / 2.0, 0, 0] %>
+  <%= ring("green", position.map.with_index{|x, i| x * spacing + offset[i]}, [90, 0, 0], 1, thickness) %>
+
+  <% offset = [0, spacing / 2.0, spacing / 2.0] %>
+  <%= ring("green", position.map.with_index{|x, i| x * spacing + offset[i]}, [90, 0, 0], 1, thickness) %>
+}

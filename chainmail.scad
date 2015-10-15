@@ -1,5 +1,9 @@
 
 
+////
+// AUTOMATICALLY GENERATED FILE
+//
+// this file [chainmail.scad] is generated from [chainmail.scad.erb]. Don't edit it directly.
 
 ////
 // Copyright (c) 2015, Andrew Monks
@@ -16,11 +20,302 @@
 // TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 // THIS SOFTWARE.
 
-// this file [chainmail.scad] is generated from [chainmail.scad.erb]. Don't edit it directly.
 
 
+color("blue")
+translate([0.0, 0.0, 0.0])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
 
-union() {
+color("blue")
+translate([0.55, 0.55, 0.55])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.0, 0.55, 0.0])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.55, 0.0, 0.55])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.55, 0.0, 0.0])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.0, 0.55, 0.55])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.0, 0.0, 1.1])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.55, 0.55, 1.6500000000000001])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.0, 0.55, 1.1])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.55, 0.0, 1.6500000000000001])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.55, 0.0, 1.1])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.0, 0.55, 1.6500000000000001])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.0, 1.1, 0.0])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.55, 1.6500000000000001, 0.55])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.0, 1.6500000000000001, 0.0])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.55, 1.1, 0.55])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.55, 1.1, 0.0])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.0, 1.6500000000000001, 0.55])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.0, 1.1, 1.1])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([0.55, 1.6500000000000001, 1.6500000000000001])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.0, 1.6500000000000001, 1.1])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([0.55, 1.1, 1.6500000000000001])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.55, 1.1, 1.1])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([0.0, 1.6500000000000001, 1.6500000000000001])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.1, 0.0, 0.0])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.6500000000000001, 0.55, 0.55])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.1, 0.55, 0.0])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.6500000000000001, 0.0, 0.55])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.6500000000000001, 0.0, 0.0])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.1, 0.55, 0.55])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.1, 0.0, 1.1])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.6500000000000001, 0.55, 1.6500000000000001])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.1, 0.55, 1.1])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.6500000000000001, 0.0, 1.6500000000000001])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.6500000000000001, 0.0, 1.1])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.1, 0.55, 1.6500000000000001])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.1, 1.1, 0.0])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("blue")
+translate([1.6500000000000001, 1.6500000000000001, 0.55])
+rotate()
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.1, 1.6500000000000001, 0.0])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("red")
+translate([1.6500000000000001, 1.1, 0.55])
+rotate([0, 90, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.6500000000000001, 1.1, 0.0])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
+color("green")
+translate([1.1, 1.6500000000000001, 0.55])
+rotate([90, 0, 0])
+rotate_extrude($fn=32)
+translate([0.4, 0, 0])
+circle(0.1, $fn=16);
+
 color("blue")
 translate([1.1, 1.1, 1.1])
 rotate()
@@ -63,299 +358,4 @@ rotate_extrude($fn=32)
 translate([0.4, 0, 0])
 circle(0.1, $fn=16);
 
-color("blue")
-translate([1.1, 1.1, 2.2])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
 
-color("blue")
-translate([1.6500000000000001, 1.6500000000000001, 2.75])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.1, 1.6500000000000001, 2.2])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.6500000000000001, 1.1, 2.75])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.6500000000000001, 1.1, 2.2])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.1, 1.6500000000000001, 2.75])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([1.1, 2.2, 1.1])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([1.6500000000000001, 2.75, 1.6500000000000001])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.1, 2.75, 1.1])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.6500000000000001, 2.2, 1.6500000000000001])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.6500000000000001, 2.2, 1.1])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.1, 2.75, 1.6500000000000001])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([1.1, 2.2, 2.2])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([1.6500000000000001, 2.75, 2.75])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.1, 2.75, 2.2])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([1.6500000000000001, 2.2, 2.75])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.6500000000000001, 2.2, 2.2])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([1.1, 2.75, 2.75])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.2, 1.1, 1.1])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.75, 1.6500000000000001, 1.6500000000000001])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.2, 1.6500000000000001, 1.1])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.75, 1.1, 1.6500000000000001])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.75, 1.1, 1.1])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.2, 1.6500000000000001, 1.6500000000000001])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.2, 1.1, 2.2])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.75, 1.6500000000000001, 2.75])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.2, 1.6500000000000001, 2.2])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.75, 1.1, 2.75])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.75, 1.1, 2.2])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.2, 1.6500000000000001, 2.75])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.2, 2.2, 1.1])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.75, 2.75, 1.6500000000000001])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.2, 2.75, 1.1])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.75, 2.2, 1.6500000000000001])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.75, 2.2, 1.1])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.2, 2.75, 1.6500000000000001])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.2, 2.2, 2.2])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("blue")
-translate([2.75, 2.75, 2.75])
-rotate()
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.2, 2.75, 2.2])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("red")
-translate([2.75, 2.2, 2.75])
-rotate([0, 90, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.75, 2.2, 2.2])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-color("green")
-translate([2.2, 2.75, 2.75])
-rotate([90, 0, 0])
-rotate_extrude($fn=32)
-translate([0.4, 0, 0])
-circle(0.1, $fn=16);
-
-
-}
