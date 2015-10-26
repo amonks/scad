@@ -16,7 +16,7 @@ for (t = [0:count]) {
     x = cos(theta) * a;
     y = sin(theta) * a;
     z = i * -0.03;
-    r = pow(2, i / 200.0) + mouthpiece_radius;
+    r = pow(2, i / 300.0) + mouthpiece_radius;
     
     difference() {
 //        difference() {
