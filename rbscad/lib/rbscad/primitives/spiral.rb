@@ -41,7 +41,7 @@ module RB_Scad
     end
 
     def calculate_arc_lengths
-      points = (0..@options[:precision]).map {|t|
+      points = (0..@options[:precision] + 1).map {|t|
         find_point_by_t t
       }
       prev = 0
