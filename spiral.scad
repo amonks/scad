@@ -1,4 +1,4 @@
-count = 1000;
+ecount = 1000;
 length = 500.0;
 resolution = 20;
 mouthpiece_radius = 0.5;

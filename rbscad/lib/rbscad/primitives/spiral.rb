@@ -18,13 +18,12 @@ module RB_Scad
     def initialize
       super
       @arc_lengths = calculate_arc_lengths
-      # binding.pry
       @arc_length = @arc_lengths.last
     end
 
     def to_scad
       o = (1 .. @options[:count] - 1).map { |i|
-        t = (i.to_f / @options[:count])
+        t = i.to_f
         position = find_point_by_u t
         theta = t * @options[:rotation]
 
@@ -47,7 +46,6 @@ module RB_Scad
       prev = 0
 
       points.map.with_index {|p, i|
-        # binding.pry
         i == 0 ? 0 : distance(points[i - 1], p)
       }.collect {|v| prev += v}
     end
@@ -73,7 +71,6 @@ module RB_Scad
       high = @arc_lengths.length
       index = 0
 
-      # binding.pry
       while (low < high)
         index = low + ((high - low) / 2.0).to_i
         if (@arc_lengths[index] < target_length)
