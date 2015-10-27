@@ -27,5 +27,9 @@ module RB_Scad
         #{@primitive.to_scad}
       |
     end
+
+    def to_file(filename = 'tmp.scad')
+      File.open(filename, 'w') { |file| file.write(to_scad) }
+    end
   end
 end

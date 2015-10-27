@@ -20,6 +20,14 @@ module RB_Scad
         [k, (options[k] || v)]
       }]
     end
+
+    def to_scad
+      Solid.new(self).to_scad
+    end
+
+    def to_file
+      Solid.new(self).to_file
+    end
   end
 end
 
