@@ -1,5 +1,3 @@
-require_relative '../solid.rb'
-
 module RB_Scad
   def distance p1, p2
     axes = p1.length

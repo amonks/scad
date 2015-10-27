@@ -6,6 +6,7 @@ module RB_Scad
     }
 
     def to_scad
+      binding.pry
       %Q|
         sphere(#{@options[:radius]}, $fn=#{@options[:resolution]});
       |

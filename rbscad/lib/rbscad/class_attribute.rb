@@ -1,3 +1,7 @@
+# From ActiveRecord
+#
+# http://apidock.com/rails/v4.2.1/Class/class_attribute
+
 class Class
   def class_attribute(*attrs)
     options = attrs.extract_options!
