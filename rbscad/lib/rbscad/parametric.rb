@@ -14,7 +14,6 @@ module RB_Scad
     end
 
     def initialize(options = {})
-      set_opts
       @fn = method(:fn)
     end
 
