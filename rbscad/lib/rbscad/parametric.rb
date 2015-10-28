@@ -1,13 +1,12 @@
 module RB_Scad
-  class Parametric
+  class Parametric < Solid
     include Defaultable
 
-    self.defaults = {
-      count: 30,
-      precision: 10
-    }
-
-    attr_accessor :fn
+    self.defaults[:count] = 30
+    self.defaults[:start] = 0
+    self.defaults[:end] = self.defaults[:count]
+    self.defaults[:length] = 100
+    self.defaults[:resolution] = 16
 
     def is_parametric?
       true
@@ -30,7 +29,7 @@ module RB_Scad
     end
 
     def positions
-      (0 .. @options[:count] - 1).map { |i|
+      (@options[:start] .. @options[:end] - 1).map { |i|
         target_length = (i.to_f / @options[:count]) * @options[:length]
         t = find_t_by_target_length target_length
         position = @fn.call t

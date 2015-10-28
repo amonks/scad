@@ -2,13 +2,7 @@
 
 module RB_Scad
   class Spiral < Parametric
-    self.defaults = {
-      count: 30,
-      length: 100,
-      coil_radius: 3,
-      resolution: 30,
-      precision: 10
-    }
+    self.defaults[:coil_radius] = 3
 
     def initialize(*args, &block)
       super(*args, &block)

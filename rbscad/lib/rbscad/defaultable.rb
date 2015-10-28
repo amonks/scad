@@ -2,6 +2,7 @@ module RB_Scad
   module Defaultable
     def self.included(subclass)
       subclass.class_attribute :defaults
+      subclass.defaults = {}
     end
 
     def set_opts(options = {})
