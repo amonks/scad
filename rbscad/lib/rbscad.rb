@@ -8,8 +8,9 @@ class Numeric
   end
 end
 
-require_relative 'rbscad/class_attribute.rb'
+# require_relative 'rbscad/class_attribute.rb'
 require_relative 'rbscad/defaultable.rb'
+require_relative 'rbscad/search.rb'
 
 require_relative 'rbscad/util/distance.rb'
 

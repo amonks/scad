@@ -4,7 +4,7 @@ module RB_Scad
   class Spiral < Parametric
     self.defaults = {
       count: 30,
-      rotation: 2 * Math::PI,
+      length: 100,
       start_radius: 1,
       end_radius: 2,
       coil_radius: 3,
@@ -13,18 +13,17 @@ module RB_Scad
       precision: 10
     }
 
-    def initialize
-      super
+    def initialize(*args, &block)
+      super(*args, &block)
       @arc_lengths = calculate_arc_lengths
       @arc_length = @arc_lengths.last
     end
 
     def fn t
-      theta = t * @options[:rotation]
       amplitude = t * @options[:coil_radius]
-      x = Math.cos(theta) * amplitude
-      y = Math.sin(theta) * amplitude
-      z = @options[:coil_height] * (theta / (2 * Math::PI))
+      x = Math.cos(t) * amplitude
+      y = Math.sin(t) * amplitude
+      z = t * 1.2
 
       [x, y, z]
     end

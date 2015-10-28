@@ -14,7 +14,7 @@ module RB_Scad
 
     def to_scad
       %Q|
-        #{transform}(#{vector.to_s})
+        #{transform}(#{vector.map{|v| "%.15f" % v}.to_s.gsub('"', '')})
       |
     end
   end

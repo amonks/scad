@@ -13,26 +13,33 @@ module RB_Scad
       true
     end
 
-    def initialize(options = {})
+    def initialize(opts = {})
+      set_opts opts
       @fn = method(:fn)
     end
 
     def to_scad
-      o = (1 .. @options[:count] - 1).map { |i|
-        t = i.to_f
-        position = find_point_by_u t
-        theta = t * @options[:rotation]
+      spheres = positions.map.with_index{|p, i|
+        # r = i * 5 / @options[:count].to_f + 1
+        r = 1
 
-        # r = (i / 300.0) ** 2 + @options[:start_radius]
-        r = 0.0001
-
-        sphere = Solid.new(Sphere.new({radius: r}))
-        sphere.transform(:rotate, [0, 0, theta])
-        sphere.transform(:translate, position)
+        sphere = Solid.new(Sphere.new({radius: r, resolution: @options[:resolution]}))
+        sphere.transform(:rotate, [0, 0, i])
+        sphere.transform(:translate, p)
 
         sphere
       }
-      Union.new(o).to_scad
+      Union.new(spheres).to_scad
+    end
+
+    def positions
+      (0 .. @options[:count] - 1).map { |i|
+        target_length = i.to_f / @options[:count] * @options[:length]
+        t = find_t_by_target_length target_length
+        position = @fn.call t
+
+        position
+      }
     end
 
     def to_file
@@ -46,46 +53,36 @@ module RB_Scad
     private
 
     def calculate_arc_lengths
-      points = (0..@options[:precision] + 1).map {|t|
-        @fn.call(t)
-      }
-      prev = 0
-
-      points.map.with_index {|p, i|
-        i == 0 ? 0 : distance(points[i - 1], p)
-      }.collect {|v| prev += v}
-    end
-
-    def find_t_by_u u
-      # @fn.call(u)
-      target_length = u * @arc_length / @options[:count]
-
-      low = 0
-      high = @arc_lengths.length
-      index = 0
-
-      while (low < high)
-        index = low + ((high - low) / 2.0).to_i
-        if (@arc_lengths[index] < target_length)
-          low = index + 1
-        else
-          high = index
+      points = []
+      lengths = [0]
+      i = 0
+      until lengths.last > @options[:length]
+        point = @fn.call(i)
+        points.push point
+        if i > 0
+          length = lengths[i - 1] + distance(point, points[i-1])
+          lengths.push length
         end
+        i += 1
       end
-      # if (@arc_lengths[index] > target_length)
-      #   index = index--
-      # end
-
-      length_before = @arc_lengths[index]
-      if (length_before == target_length)
-        return index / @arc_length
-      else
-        return (index + (target_length - length_before) / (@arc_lengths[index + 1] - length_before)) / @arc_length
-      end
+      lengths
     end
 
-    def find_point_by_u u
-      t = find_t_by_u u
+    def find_t_by_target_length target_length
+      length_after = @arc_lengths.bsearch{|x| x >= target_length }
+      index_after = @arc_lengths.find_index length_after
+      index_before = index_after - 1
+      length_before = @arc_lengths[index_before]
+
+      length = length_after - length_before
+      difference = target_length - length_before
+      target_index = index_before + difference / length
+
+      target_index
+    end
+
+    def find_point_by_target_length target_length
+      t = find_t_by_target_length target_length
       @fn.call(t)
     end
   end

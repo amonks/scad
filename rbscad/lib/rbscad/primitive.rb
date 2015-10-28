@@ -6,8 +6,8 @@ module RB_Scad
       true
     end
 
-    def initialize(options = {})
-      set_opts
+    def initialize(opts = {})
+      set_opts opts
     end
 
     def to_scad
