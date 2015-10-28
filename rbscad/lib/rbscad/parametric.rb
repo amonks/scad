@@ -19,27 +19,40 @@ module RB_Scad
     end
 
     def to_scad
-      spheres = positions.map.with_index{|p, i|
-        # r = i * 5 / @options[:count].to_f + 1
-        r = 1
-
-        sphere = Solid.new(Sphere.new({radius: r, resolution: @options[:resolution]}))
-        sphere.transform(:rotate, [0, 0, i])
-        sphere.transform(:translate, p)
-
-        sphere
-      }
+      spheres = []
+      positions.each_with_index do |p, i|
+        if i < positions.length - 2
+          hull = Hull.new([sphere(i), sphere(i + 1)])
+          spheres.push hull
+        end
+      end
       Union.new(spheres).to_scad
     end
 
     def positions
       (0 .. @options[:count] - 1).map { |i|
-        target_length = i.to_f / @options[:count] * @options[:length]
+        target_length = (i.to_f / @options[:count]) * @options[:length]
         t = find_t_by_target_length target_length
         position = @fn.call t
 
         position
       }
+    end
+
+    def position i
+      positions[i]
+    end
+
+    def rotation i
+      [0, 0, 0]
+    end
+
+    def radius i
+      1
+    end
+
+    def percent i
+      i.to_f / @options[:count].to_f
     end
 
     def to_file
@@ -51,6 +64,14 @@ module RB_Scad
     end
 
     private
+
+    def sphere i
+      sphere = Solid.new(Sphere.new({radius: radius(i), resolution: @options[:resolution]}))
+      sphere.transform(:rotate, rotation(i))
+      sphere.transform(:translate, position(i))
+
+      sphere
+    end
 
     def calculate_arc_lengths
       points = []
@@ -65,6 +86,7 @@ module RB_Scad
         end
         i += 1
       end
+      puts "calculated #{lengths.length} arc lengths! the longest is #{lengths.last}"
       lengths
     end
 

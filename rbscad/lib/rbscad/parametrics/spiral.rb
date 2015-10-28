@@ -5,10 +5,7 @@ module RB_Scad
     self.defaults = {
       count: 30,
       length: 100,
-      start_radius: 1,
-      end_radius: 2,
       coil_radius: 3,
-      coil_height: 2,
       resolution: 30,
       precision: 10
     }

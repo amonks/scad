@@ -18,10 +18,12 @@ require_relative 'rbscad/solid.rb'
 require_relative 'rbscad/transform.rb'
 require_relative 'rbscad/difference.rb'
 require_relative 'rbscad/union.rb'
+require_relative 'rbscad/hull.rb'
 require_relative 'rbscad/primitive.rb'
 require_relative 'rbscad/primitives/sphere.rb'
 
 require_relative 'rbscad/parametric.rb'
 require_relative 'rbscad/parametrics/spiral.rb'
+require_relative 'rbscad/parametrics/horn.rb'
 
 include RB_Scad
