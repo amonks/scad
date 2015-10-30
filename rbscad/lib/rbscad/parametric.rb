@@ -30,7 +30,7 @@ module RB_Scad
 
     def positions
       (@options[:start] .. @options[:end] - 1).map { |i|
-        target_length = (i.to_f / @options[:count]) * @options[:length]
+        target_length = ( i.to_f / @options[:count] ) * @options[:length]
         t = find_t_by_target_length target_length
         position = @fn.call t
 

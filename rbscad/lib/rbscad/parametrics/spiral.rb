@@ -3,6 +3,8 @@
 module RB_Scad
   class Spiral < Parametric
     self.defaults[:coil_radius] = 3
+    self.defaults[:start] = 0
+    self.defaults[:z_multiplier] = 2
 
     def initialize(*args, &block)
       super(*args, &block)
@@ -14,7 +16,7 @@ module RB_Scad
       amplitude = t * @options[:coil_radius]
       x = Math.cos(t) * amplitude
       y = Math.sin(t) * amplitude
-      z = t * 1.2
+      z = t * @options[:z_multiplier]
 
       [x, y, z]
     end

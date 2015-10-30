@@ -26,4 +26,6 @@ require_relative 'rbscad/parametric.rb'
 require_relative 'rbscad/parametrics/spiral.rb'
 require_relative 'rbscad/parametrics/horn.rb'
 
+require_relative 'rbscad/forms/trumpet.rb'
+
 include RB_Scad
