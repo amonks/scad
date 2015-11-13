@@ -1,5 +1,5 @@
 module RB_Scad
-  class Primitive
+  class Primitive < Solid
     include Defaultable
 
     def is_primitive?

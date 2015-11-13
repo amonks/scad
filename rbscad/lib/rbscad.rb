@@ -21,11 +21,14 @@ require_relative 'rbscad/union.rb'
 require_relative 'rbscad/hull.rb'
 require_relative 'rbscad/primitive.rb'
 require_relative 'rbscad/primitives/sphere.rb'
+require_relative 'rbscad/primitives/cylinder.rb'
+require_relative 'rbscad/primitives/tube.rb'
 
 require_relative 'rbscad/parametric.rb'
 require_relative 'rbscad/parametrics/spiral.rb'
 require_relative 'rbscad/parametrics/horn.rb'
 
 require_relative 'rbscad/forms/trumpet.rb'
+require_relative 'rbscad/forms/multi_trumpet.rb'
 
 include RB_Scad

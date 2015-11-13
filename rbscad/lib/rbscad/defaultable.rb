@@ -2,6 +2,7 @@ module RB_Scad
   module Defaultable
     def self.included(subclass)
       subclass.class_attribute :defaults
+      # subclass.attr_accessor :defaults
       subclass.defaults = {}
     end
 
