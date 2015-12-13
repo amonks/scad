@@ -32,14 +32,14 @@ module RB_Scad
           z_multiplier: @options[:z_multiplier] * i,
           resolution: @options[:resolution]
         })
-        pin = (self.defaults[:pin] * self.defaults[:count]).floor
-        x_offset = exterior.position(pin)[0]
-        y_offset = exterior.position(pin)[1]
-        z_offset = exterior.position(pin)[2]
-        t = [Transform.new(
-          :translate,
-          [0 + x_offset, 0 + y_offset, (k * self.defaults[:start_radius] - self.defaults[:thickness]) - z_offset]
-        )]
+        # pin = (self.defaults[:pin] * self.defaults[:count]).floor
+        # x_offset = exterior.position(pin)[0]
+        # y_offset = exterior.position(pin)[1]
+        # z_offset = exterior.position(pin)[2]
+        # t = [Transform.new(
+        #   :translate,
+        #   [0 + x_offset, 0 + y_offset, (k * self.defaults[:start_radius] - self.defaults[:thickness]) - z_offset]
+        # )]
         interiors.push(Solid.new(Horn.new({
           start: 0,
           end: @options[:count],
@@ -49,15 +49,17 @@ module RB_Scad
           length: @options[:length],
           z_multiplier: @options[:z_multiplier] * i,
           resolution: @options[:resolution]
-        }), t))
+        })))
 
-        exteriors.push(Solid.new(exterior, t))
+        exteriors.push(Solid.new(exterior))
       end
 
-      Difference.new(
-        Union.new(exteriors),
-        Union.new(interiors)
-      ).to_scad
+      # Difference.new(
+      #   Union.new(exteriors),
+      #   Union.new(interiors)
+      # ).to_scad
+      interiors.each_with_index.map{ |x, i| x.to_file "interior#{i}.scad" }
+      exteriors.each_with_index.map{ |x, i| x.to_file "exterior#{i}.scad" }
     end
   end
 end
